@@ -135,7 +135,7 @@ const Home = () => {
 
             <div>
               <h1 className='mb-1 text-xl'>{dashboardData?.totalRiders}</h1>
-              <p className='text-[#a6b0cf] text-sm'>{"Total Riders"}</p>
+              <p className='text-[#a6b0cf] text-sm'>{"Nombre total de passagers"}</p>
             </div>
           </div>
 
@@ -151,7 +151,7 @@ const Home = () => {
 
             <div>
               <h1 className='mb-1 text-xl'>{dashboardData?.totalDrivers}</h1>
-              <p className='text-[#a6b0cf] text-sm'>{"Total Drivers"}</p>
+              <p className='text-[#a6b0cf] text-sm'>{"Nombre total de conducteurs"}</p>
             </div>
           </div>
 
@@ -168,7 +168,7 @@ const Home = () => {
 
             <div>
               <h1 className='mb-1 text-xl'>{dashboardData?.totalBookings}</h1>
-              <p className='text-[#a6b0cf] text-sm'>{"Total Bookings"}</p>
+              <p className='text-[#a6b0cf] text-sm'>{"Nombre total de réservations"}</p>
             </div>
           </div>
 
@@ -185,7 +185,7 @@ const Home = () => {
 
             <div>
               <h1 className='mb-1 text-xl'>{dashboardData?.completedBookings}</h1>
-              <p className='text-[#a6b0cf] text-sm'>{"Completed Bookings"}</p>
+              <p className='text-[#a6b0cf] text-sm'>{"Réservations terminées"}</p>
             </div>
           </div>
 
@@ -200,7 +200,7 @@ const Home = () => {
         {/* LINE CHART  */}
         <div className="bg-white rounded-md lg:min-w-[70%] p-5 lg:flex-none flex-1 mt-2">
           <div className='flex  justify-between items-center'>
-            <p className="text-lg font-medium mb-2">Total Bookings ({timePeriod === 'month' ? 'Monthly' : 'Yearly'})</p>
+            <p className="text-lg font-medium mb-2">Nombre total de réservations ({timePeriod === 'month' ? 'Monthly' : 'Yearly'})</p>
             <select value={timePeriod || ""} onChange={handleTimePeriodChange} className="bg-[#e5e7ea] p-2 rounded-md outline-none text-sm appearance-none max-w-[8rem] truncate cursor-pointer">
               <option key={"month"} value={"month"}>Monthly</option>
               <option key={"year"} value={"year"}>Yearly</option>
@@ -212,24 +212,24 @@ const Home = () => {
         {/* PIE CHART  */}
 
         <div className="bg-white rounded-md p-5 h-[23rem] flex-1 mt-2">
-          <p className="text-lg font-medium mb-4">Analytics</p>
+          <p className="text-lg font-medium mb-4">Analyses</p>
           <div className="flex justify-center items-center flex-col">
             <div className="relative w-[12rem] h-[12rem]">
               <Doughnut data={donutData} options={donutOptions} />
               <div className="absolute top-[4rem] left-[3rem] flex flex-col items-center justify-center">
                 <p className="text-4xl font-bold text-black">{successRate.toFixed(1)}%</p>
-                <p className="text-xs text-gray-600">Pending Bookings</p>
+                <p className="text-[0.6rem] text-gray-600 ml-[-10px]">Réservations en attente</p>
               </div>
             </div>
             <div className="flex justify-between w-full mt-8">
 
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-[#4F8EF7] rounded-full mr-1"></div>
-                <span className="text-xs">Total Booking</span>
+                <span className="text-xs">Réservations totales</span>
               </div>
               <div className="flex items-center">
                 <div className="w-3 h-3 bg-[#FFD66B] rounded-full mr-1"></div>
-                <span className="text-xs">Completed</span>
+                <span className="text-xs">Terminées</span>
               </div>
             </div>
           </div>
@@ -243,20 +243,20 @@ const Home = () => {
       <div className='flex justify-between items-start mt-8 gap-x-6 flex-wrap'>
 
         <div className='bg-white rounded-md lg:max-w-[70%] lg:min-w-[70%]  p-5 lg:flex-none min-w-[100%] flex-1 mt-2  overflow-x-auto'>
-          <p className="text-lg font-medium mb-2">Booking Preview</p>
+          <p className="text-lg font-medium mb-2">Aperçu des réservations</p>
           {
             dashboardData?.totalBookingsData?.length > 0 ?
               <div className="overflow-x-auto w-full">
                 <table className="min-w-[800px] border-collapse overflow-x-auto"> {/* Ensure table is wide enough */}
                   <thead>
                     <tr>
-                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Booking Id</th>
-                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Rider Name</th>
-                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Driver Name</th>
-                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Pickup Address</th>
-                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Drop Off Address</th>
-                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Status</th>
-                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Ride Cost</th>
+                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Identifiant de réservation</th>
+                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Nom du passager</th>
+                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Nom du conducteur</th>
+                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Adresse de prise en charge</th>
+                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Adresse de dépose</th>
+                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Statut</th>
+                      <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Coût de la course</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -287,7 +287,7 @@ const Home = () => {
         </div>
 
         <div className="bg-white rounded-md p-5 flex-1 mt-2 min-w-[20rem]">
-          <p className="text-lg font-medium mb-4">Drivers Preview</p>
+          <p className="text-lg font-medium mb-4">Aperçu des conducteurs</p>
           {
             dashboardData?.totalDriversData?.length > 0 ?
               <div className="">

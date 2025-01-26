@@ -1,4 +1,4 @@
-import {FaAddressBook, FaBuilding, FaCalendarAlt, FaRegCalendarCheck, FaUser } from 'react-icons/fa';
+import { FaAddressBook, FaBuilding, FaCalendarAlt, FaRegCalendarCheck, FaUser } from 'react-icons/fa';
 import { RxDashboard } from 'react-icons/rx';
 import { IoIosCall } from "react-icons/io";
 import { MdModeOfTravel } from 'react-icons/md';
@@ -8,25 +8,25 @@ export const navData = [
     {
         id: 1,
         link: "home",
-        name: "Dashboard",
+        name: "Tableau de bord",
         icon: <RxDashboard />
     },
     {
         id: 3,
         link: "contacts",
-        name: "Categories",
+        name: "Catégories",
         icon: <IoCarSportSharp />
     },
     {
         id: 7,
         link: "users",
-        name: "Users",
+        name: "Utilisateurs",
         icon: <FaUser />
     },
     {
         id: 4,
         link: "companies",
-        name: "Bookings",
+        name: "Réservations",
         icon: <MdModeOfTravel />
     },
 ];

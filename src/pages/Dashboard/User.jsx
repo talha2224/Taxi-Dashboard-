@@ -80,10 +80,10 @@ const User = () => {
                                 <thead className='bg-[#ececec] h-[3rem]'>
                                     <tr>
                                         <th className={thStyle}>Id</th>
-                                        <th className={thStyle}>User Name</th>
-                                        <th className={thStyle}>User Email</th>
-                                        <th className={thStyle}>Phone Number</th>
-                                        <th className={thStyle}>Role</th>
+                                        <th className={thStyle}>Nom d'utilisateur</th>
+                                        <th className={thStyle}>Email de l'utilisateur</th>
+                                        <th className={thStyle}>Numéro de téléphone</th>
+                                        <th className={thStyle}>Rôle</th>
                                         <th className={thStyle}>Actions</th>
                                     </tr>
                                 </thead>
@@ -97,7 +97,7 @@ const User = () => {
                                             <td className="py-2 px-4 text-sm text-nowrap">{user.role}</td>
                                             <td className='py-2 px-4'>
                                                 <div className='flex items-center gap-x-2'>
-                                                    <button onClick={() => { toogleUser(user?._id,!user?.accountBlocked) }} className={`${user.accountBlocked ?"bg-[#008000]":"bg-red-500"} text-xs text-white px-2 rounded-[0.3rem] text-nowrap h-[2rem]`}>{user?.accountBlocked?"Activate":"Block"}</button>
+                                                    <button onClick={() => { toogleUser(user?._id, !user?.accountBlocked) }} className={`${user.accountBlocked ? "bg-[#008000]" : "bg-red-500"} text-xs text-white px-2 rounded-[0.3rem] text-nowrap h-[2rem]`}>{user?.accountBlocked ? "Activate" : "Block"}</button>
                                                 </div>
                                             </td>
                                         </tr>
@@ -105,7 +105,7 @@ const User = () => {
                                 </tbody>
                             </table>
                         </div>
-                        <Pagination data={userData} itemsPerPageOptions={[5, 10, 15, 20]} onDataChange={handleDataChange}/>
+                        <Pagination data={userData} itemsPerPageOptions={[5, 10, 15, 20]} onDataChange={handleDataChange} />
 
                     </div>
                     :

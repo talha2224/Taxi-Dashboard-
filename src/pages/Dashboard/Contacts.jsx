@@ -24,7 +24,7 @@ const Contacts = () => {
     const fetchData = async () => {
         try {
             let res = await axios.get(`${config.baseUrl}/category/all`)
-            console.log(res.data?.data,'res.data?.data')
+            console.log(res.data?.data, 'res.data?.data')
             setContactData(res.data?.data)
         }
         catch (error) {
@@ -72,8 +72,8 @@ const Contacts = () => {
                     <CiSearch />
                 </div>
 
-                <div onClick={() => setCreateContactModel(!createContactModel)} title='Create Contact' className='flex justify-center items-center bg-[#eff2f7] rounded-md w-[10rem] py-2 px-3 text-sm gap-x-2 cursor-pointer mt-2'>
-                    <p className='text-sm'>Create Category</p>
+                <div onClick={() => setCreateContactModel(!createContactModel)} title='Create Contact' className='flex justify-center items-center bg-[#eff2f7] rounded-md w-[13rem] py-2 px-3 text-sm gap-x-2 cursor-pointer mt-2'>
+                    <p className='text-sm'>Créer une catégorie</p>
                 </div>
 
 
@@ -90,8 +90,8 @@ const Contacts = () => {
                             <table style={{ borderSpacing: "0 10px" }} className="min-w-[100%] border-separate ">
                                 <thead>
                                     <tr>
-                                        <th className={thStyle}>Category Id</th>
-                                        <th className={thStyle}>Category Name</th>
+                                        <th className={thStyle}>ID de la catégorie</th>
+                                        <th className={thStyle}>Nom de la catégorie</th>
                                         <th className={thStyle}>Actions</th>
 
                                     </tr>
@@ -105,7 +105,7 @@ const Contacts = () => {
                                                 <td className='py-2 px-4'>
                                                     <div className='flex items-center gap-x-2'>
                                                         <button onClick={() => { deleteContact(company?._id) }} className={`bg-red-500 text-xs text-white px-2 rounded-[0.3rem] text-nowrap h-[2rem]`}>Delete</button>
-                                                        <button onClick={() => { setupdateContactModel(!updateContactModel); setSaveContactData({ contactId: company?._id,name: company?.name}) }} className='bg-[#eff2f7] text-xs px-2 rounded-[0.3rem] text-nowrap h-[2rem]'>Update</button>
+                                                        <button onClick={() => { setupdateContactModel(!updateContactModel); setSaveContactData({ contactId: company?._id, name: company?.name }) }} className='bg-[#eff2f7] text-xs px-2 rounded-[0.3rem] text-nowrap h-[2rem]'>Update</button>
                                                     </div>
                                                 </td>
                                             </tr>

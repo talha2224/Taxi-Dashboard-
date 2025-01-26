@@ -18,7 +18,7 @@ const Companies = () => {
     const fetchInitialData = async () => {
         try {
             let res = await axios.get(`${config.baseUrl}/booking/all`)
-            console.log(res.data?.data,'res.data?.data')
+            console.log(res.data?.data, 'res.data?.data')
             setBookingData(res.data?.data)
         }
         catch (error) {
@@ -59,14 +59,14 @@ const Companies = () => {
                         <table className="min-w-[800px] border-collapse overflow-x-auto"> {/* Ensure table is wide enough */}
                             <thead>
                                 <tr>
-                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Booking Id</th>
-                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Rider Name</th>
-                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Driver Name</th>
-                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Pickup Address</th>
-                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Drop Off Address</th>
-                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Status</th>
-                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Booking Date</th>
-                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Ride Cost</th>
+                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Identifiant de réservation</th>
+                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Nom du passager</th>
+                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Nom du conducteur</th>
+                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Adresse de prise en charge</th>
+                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Adresse de dépose</th>
+                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Statut</th>
+                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Date de réservation</th>
+                                    <th className="border-b py-2 px-4 text-left text-sm font-normal text-nowrap">Coût de la course</th>
                                 </tr>
                             </thead>
                             <tbody>
